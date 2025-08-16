@@ -1,0 +1,5 @@
+package ai.project.spring_ai.model;
+
+public record Question(String question) {
+
+}
