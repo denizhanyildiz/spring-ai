@@ -1,6 +1,7 @@
 package ai.project.spring_ai.controllers;
 
 import ai.project.spring_ai.model.Answer;
+import ai.project.spring_ai.model.GetCapitalRequest;
 import ai.project.spring_ai.model.Question;
 import ai.project.spring_ai.service.OpenAIService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +20,11 @@ public class QuestionController {
 
     @PostMapping("/ask")
     public Answer askQuestion(@RequestBody Question question){
-
         return openAIService.getAnswer(question);
+    }
+
+    @PostMapping("/capital")
+    public Answer askQuestion(@RequestBody GetCapitalRequest getCapitalRequest){
+        return openAIService.getCapital(getCapitalRequest);
     }
 }
